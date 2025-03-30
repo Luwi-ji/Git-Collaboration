@@ -3,31 +3,42 @@ Lowel-Jay Rubino - owner
 Edited: 
 Gvan Antoni F. Rocas - Design Layout
 
-Arithmetic Program
+Updated Arithmetic Program with Minus
 
 #include <stdio.h>
-
-// Function prototype
+ 
+// Function prototypes
 int add(int a, int b);
-
+int subtract(int a, int b);
+ 
 int main() {
-    int num1, num2, result;
-    
+    int num1, num2, choice, result;
     // User input
     printf("Enter first number: ");
     scanf("%d", &num1);
-    
     printf("Enter second number: ");
     scanf("%d", &num2);
-    
-    // Perform addition
-    result = add(num1, num2);
-    printf("Result: %d + %d = %d\n", num1, num2, result);
-    
+    printf("Choose operation:\n1. Addition\n2. Subtraction\nEnter choice: ");
+    scanf("%d", &choice);
+    // Perform operation based on user choice
+    if (choice == 1) {
+        result = add(num1, num2);
+        printf("Result: %d + %d = %d\n", num1, num2, result);
+    } else if (choice == 2) {
+        result = subtract(num1, num2);
+        printf("Result: %d - %d = %d\n", num1, num2, result);
+    } else {
+        printf("Invalid choice!\n");
+    }
     return 0;
 }
-
-// Function definition
+ 
+// Function definitions
 int add(int a, int b) {
     return a + b;
 }
+ 
+int subtract(int a, int b) {
+    return a - b;
+}
+
